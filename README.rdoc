@@ -1,17 +1,49 @@
-= wymrails
+= WYMeditor: what you see is What You Mean web-based editor (for Ruby on Rails)
 
-Description goes here.
+Not much to say so far - I was tired of adding wymeditor manually.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+This gem simply installs wymeditor plus convenience helpers for Rails 3.
+
+== Usage
+
+Add 'wymrails' to your Gemfile and run 'rails g wymrails:install'
+
+This will copy wymeditors javascript files to public/javascript/ and add a
+wymeditor_helper.rb to app/helpers/ that you can use for conveniently 
+initializing it.
+
+Add <%=raw wymeditor_initialize %> to your layouts <head> section.
+
+Add the 'wymeditor' class to all textareas that you want wymeditor to handle.
+The 'wymupdate' class is added to all submit inputs automatically.
+
+And you're done.
+
+== Requirements
+
+You'll need jquery (https://github.com/indirect/jquery-rails)
+This gem will not attempt to install jquery for you.
+
+Your application needs to be Rails 3+
+
+== Updates
+
+WYMeditor stable updates are infrequent and it is unlikely that you need to
+update it. If you must, simply overwrite your public/javascripts/wymeditor.
+
+I'll package this gem with every stable version being released, carrying the
+same version as its WYMeditor.
+
+If you upgrade the gem, re-run 'rails g wymeditor:install'
 
 == Copyright
 
-Copyright (c) 2010 Marian Rudzynski. See LICENSE for details.
+wymeditor gem (c) 2010 Marian Rudzynski. Licensed as whatever wymeditor is
+licensed.
+
+WYMeditor (c) 2005 - 2009 Jean-Francois Hovinne, http://www.wymeditor.org/
+Dual licensed under the MIT (MIT-license.txt)
+and GPL (GPL-license.txt) licenses.
+
+Partially based on https://github.com/sbwoodside/wym_editor_helper
+(which is what you could use if you're still using Rails 2.x)
