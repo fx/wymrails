@@ -1,7 +1,7 @@
 module WymeditorHelper
 	def wymeditor_initialize(*dom_ids)
 		output = []
-		unless(RAILS_ENV =~ /(production)|(test)/)
+		unless(Rails.env =~ /(production)|(test)/)
 			output << javascript_include_tag('/javascripts/wymeditor/wymeditor/jquery.wymeditor.js')
 		else
 			output << javascript_include_tag('/javascripts/wymeditor/wymeditor/jquery.wymeditor.pack.js')
