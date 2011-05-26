@@ -6,7 +6,7 @@ This gem simply installs wymeditor plus convenience helpers for Rails 3.
 
 == Usage
 
-Add 'wymrails' to your Gemfile and run 'rails g wymrails:install'
+Add 'wymeditor' to your Gemfile and run 'rails g wymeditor:install'
 
 This will copy wymeditors javascript files to public/javascript/ and add a
 wymeditor_helper.rb to app/helpers/ that you can use for conveniently 
